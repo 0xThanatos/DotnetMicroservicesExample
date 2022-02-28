@@ -27,20 +27,18 @@ $ dotnet ef migrations add initialmigration
 $ dotnet run
 ```
 
-The server is running at `http://localhost:5000`
-
 ---
 
 ## Build Docker Image
 
 ```
-$ docker build -t {DOCKER_HUB_USERNAME}/magnecomp-example-service .
+$ docker build -t {DOCKER_HUB_USERNAME}/example-service .
 ```
 
 ## Push Docker Image to Docker Hub
 
 ```
-$ docker push {DOCKER_HUB_USERNAME}/magnecomp-example-service
+$ docker push {DOCKER_HUB_USERNAME}/example-service
 ```
 
 ---
