@@ -1,0 +1,28 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-srv
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/use-regex: "true"
+  labels:
+    name: ingress-srv
+spec:
+  rules:
+    - host: magnecomp.dev
+      http:
+        paths:
+          - path: /api/products
+            pathType: Prefix
+            backend:
+              service:
+                name: products-clusterip-srv
+                port:
+                  number: 80
+          - path: /api/c/products
+            pathType: Prefix
+            backend:
+              service:
+                name: commands-clusterip-srv
+                port:
+                  number: 80
